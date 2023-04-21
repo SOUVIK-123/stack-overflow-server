@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import userRoutes from './routes/users.js'
-import questionRoutes from './routes/Questions'
+import questionRoutes from './routes/questions.js'
 import answerRoutes from './routes/Answers.js'
 import dotenv from 'dotenv'
 
@@ -26,4 +26,5 @@ const CONNECTION_URL="mongodb+srv://admin:admin@stack-overflow-clone.ghusw9c.mon
 mongoose.connect(CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})
    .then(()=> app.listen(PORT,()=>{console.log(`server running on ${PORT}`)}))
    .catch((err)=>console.log(err.message))
-
+const router = express.Router()
+export default router
